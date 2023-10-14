@@ -25,5 +25,5 @@
         android:id="@+id/editText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="여기에 글을 입력하세요"/>
+        android:text="여기에 글을 입력하세요!"/>
 </LinearLayout>
