@@ -13,15 +13,20 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        for (i in 0..9) Log.d("Test", "안녕하세요 $i")
 //        ArrayList<Material> materialList = new ArrayList<Material>()
-        val changeButton: Button = findViewById(R.id.button)
-        val textBox : TextView = findViewById(R.id.textView)
-        val editText : EditText = findViewById(R.id.editText)
-        changeButton.setOnClickListener {
-            val naeyong :String = editText.text.toString()
-            textBox.text = naeyong
-            Toast.makeText(this.applicationContext, naeyong, Toast.LENGTH_SHORT).show()
+        val ButtonTmp: Button = findViewById(R.id.buttonTmp) //임시 확인 버튼
+        val textViewTmp: TextView = findViewById(R.id.textViewTmp) //임시 결과 창
+        val editTextMaterial : EditText = findViewById(R.id.editTextMaterial) //재료명 적는 곳
+        val editTextDegree : EditText = findViewById(R.id.editTextDegree) // 도수 적는 곳
+        val editTextNumberAmount : EditText = findViewById(R.id.editTextNumberAmount) //양 적는 곳
+
+        ButtonTmp.setOnClickListener {
+            val naeyong :String = editTextMaterial.text.toString()
+            val degree : Float = editTextDegree.text.toString().toFloat()
+            val amount : Float = editTextNumberAmount.text.toString().toFloat()
+            textViewTmp.setText("재료명 : "+naeyong+" 도수: "+degree+" 양 : "+amount)
+
+
         }
     }
 }

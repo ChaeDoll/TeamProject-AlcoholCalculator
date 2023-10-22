@@ -8,71 +8,84 @@
     tools:context=".MainActivity"
     >
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
+                <EditText
+                    android:id="@+id/editTextMaterial"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="재료"
+                    android:inputType="textPersonName"
+                    android:minWidth="48dp"
+                    android:minHeight="48dp"
+                    android:textAlignment="center" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
+                <EditText
+                    android:id="@+id/editTextDegree"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="도수"
+                    android:inputType="numberDecimal"
+                    android:minWidth="48dp"
+                    android:minHeight="48dp"
+                    android:textAlignment="center" />
 
-            <EditText
-                android:id="@+id/editTextMaterial"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:minWidth="48dp"
-                android:minHeight="48dp"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="재료"
-                android:inputType="textPersonName"
-                android:textAlignment="center" />
-
-            <EditText
-                android:id="@+id/editTextDegree"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="도수"
-                android:inputType="numberDecimal"
-                android:minWidth="48dp"
-                android:minHeight="48dp"
-                android:textAlignment="center" />
-
-            <TextView
-                android:id="@+id/textViewPercent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="%" />
+                <TextView
+                    android:id="@+id/textViewPercent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="%" />
 
 
-            <EditText
-                android:id="@+id/editTextNumberAmount"
-                android:layout_width="95dp"
-                android:layout_height="wrap_content"
-                android:minWidth="48dp"
-                android:minHeight="48dp"
-                android:ems="10"
-                android:hint="양"
-                android:inputType="numberDecimal"
-                android:textAlignment="center" />
+                <EditText
+                    android:id="@+id/editTextNumberAmount"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="양"
+                    android:inputType="numberDecimal"
+                    android:minWidth="48dp"
+                    android:minHeight="48dp"
+                    android:textAlignment="center" />
 
-            <TextView
-                android:id="@+id/textViewMl"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ml" />
+                <TextView
+                    android:id="@+id/textViewMl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ml" />
 
 
             <Button
                 android:id="@+id/buttonMinus"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:text="-" />
+                android:background="@drawable/rounded_rectangle_minus_button"
+                android:text="-"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_gravity="end"
+                />
 
-        </LinearLayout>
-    </ScrollView>
+        <Button
+            android:id="@+id/buttonPlus"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="+" />
+
+        <Button
+            android:id="@+id/buttonTmp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="임시 확인 버튼" />
+
+        <TextView
+            android:id="@+id/textViewTmp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="결과" />
 
 </LinearLayout>
