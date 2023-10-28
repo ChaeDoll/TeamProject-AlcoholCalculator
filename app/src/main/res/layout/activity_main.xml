@@ -32,11 +32,6 @@
 
         </ScrollView>
 
-        <!--        <LinearLayout-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:orientation="vertical" />-->
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -46,25 +41,26 @@
 
 
             <Button
-                android:id="@+id/add"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="insert" />
-
-            <Button
-                android:id="@+id/modify"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="modify" />
-
-            <Button
                 android:id="@+id/delete"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="delete" />
+                android:layout_weight="0.5"
+                android:text="초기화" />
+
+            <Button
+                android:id="@+id/buttonResult"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"
+                android:text="계산 결과" />
+            <Button
+                android:id="@+id/add"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text="+" />
+
+
 <!-- 버튼 3개 linearlayout -->
         </LinearLayout>
 <!-- listviwe linearLayout -->
