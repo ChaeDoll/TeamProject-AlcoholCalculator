@@ -7,85 +7,66 @@
     android:orientation="vertical"
     tools:context=".MainActivity"
     >
+    <!--가장 큰 LinearLayout-->
+    <!--    LinearLayout은 한쪽 방향으로만 view가 쌓이므로 orientation 속성이 필수 속성, 추가하지 않으면 오류 발생-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="10">
 
-                <EditText
-                    android:id="@+id/editTextMaterial"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:hint="재료"
-                    android:inputType="textPersonName"
-                    android:minWidth="48dp"
-                    android:minHeight="48dp"
-                    android:textAlignment="center" />
-
-                <EditText
-                    android:id="@+id/editTextDegree"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="도수"
-                    android:inputType="numberDecimal"
-                    android:minWidth="48dp"
-                    android:minHeight="48dp"
-                    android:textAlignment="center" />
-
-                <TextView
-                    android:id="@+id/textViewPercent"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="%" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:fillViewport="true"
+            >
 
 
-                <EditText
-                    android:id="@+id/editTextNumberAmount"
-                    android:layout_width="95dp"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="양"
-                    android:inputType="numberDecimal"
-                    android:minWidth="48dp"
-                    android:minHeight="48dp"
-                    android:textAlignment="center" />
+            <ListView
+                android:id="@+id/listview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:choiceMode="singleChoice" />
 
-                <TextView
-                    android:id="@+id/textViewMl"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="ml" />
+
+        </ScrollView>
+
+        <!--        <LinearLayout-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:orientation="vertical" />-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="3">
 
 
             <Button
-                android:id="@+id/buttonMinus"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/rounded_rectangle_minus_button"
-                android:text="-"
-                android:textSize="30sp"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                android:layout_gravity="end"
-                />
+                android:id="@+id/add"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="insert" />
 
-        <Button
-            android:id="@+id/buttonPlus"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:text="+" />
+            <Button
+                android:id="@+id/modify"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="modify" />
 
-        <Button
-            android:id="@+id/buttonTmp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="임시 확인 버튼" />
-
-        <TextView
-            android:id="@+id/textViewTmp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="결과" />
-
+            <Button
+                android:id="@+id/delete"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="delete" />
+<!-- 버튼 3개 linearlayout -->
+        </LinearLayout>
+<!-- listviwe linearLayout -->
+    </LinearLayout>
 </LinearLayout>
