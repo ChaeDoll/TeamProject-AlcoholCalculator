@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
     private var cistBinding: CalcListItemBinding?= null
     private val cbinding get() = cistBinding!!
 
-//    변수
+//    변수 랄라
     private lateinit var calclistView : ListView
     val calcList = arrayListOf<CalcItem>()
     override fun onCreate(savedInstanceState: Bundle?) {
