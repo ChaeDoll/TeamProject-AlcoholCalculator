@@ -13,12 +13,12 @@ class MainActivity : AppCompatActivity() {
 //    binding
     private var mainBinding: ActivityMainBinding?= null
     private val mbinding get() = mainBinding!!
-    private var cistBinding: CalcListItemBinding?= null
-    private val cbinding get() = cistBinding!!
+//    private var cistBinding: CalcListItemBinding?= null
+//    private val cbinding get() = cistBinding!!
 
 //    변수
     private lateinit var calclistView : ListView
-    val calcList = arrayListOf<CalcItem>()
+    private val calcList = arrayListOf<CalcItem>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // activity_main.xml 연결
@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         // activity_main.xml 기본 view로 설정
         setContentView(mbinding.root)
         //calc_list_item.xml 연결
-        cistBinding = CalcListItemBinding.inflate(layoutInflater)
+//        cistBinding = CalcListItemBinding.inflate(layoutInflater)
 
         //calcListViewAdapter.kt 연결
         val calcAdapter = CalcListViewAdapter(this, calcList)
@@ -38,11 +38,11 @@ class MainActivity : AppCompatActivity() {
 
         val addButton : Button = mbinding.add
         addButton.setOnClickListener {
-            var count : Int
-            count = calcAdapter.count
+            val count : Int = calcAdapter.count
             calcList.add(count,CalcItem("",0f,0f))
             calcAdapter.notifyDataSetChanged()
         }
+
 
 
     }
