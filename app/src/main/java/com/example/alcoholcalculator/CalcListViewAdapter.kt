@@ -9,7 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 
-class CalcListViewAdapter(val context:Context, val calcItems: ArrayList<CalcItem>):BaseAdapter() {
+class CalcListViewAdapter(private val context:Context, private val calcItems: ArrayList<CalcItem>):BaseAdapter() {
 //    private var listBinding: ListItemBinding?= null
 //    private val lbinding get() = listBinding!!
 
@@ -23,7 +23,7 @@ class CalcListViewAdapter(val context:Context, val calcItems: ArrayList<CalcItem
 
 
     override fun getView(position: Int, converView: View?, parent: ViewGroup?): View { //list_item.xml의 view와 데이터간의 연동이 이루어짐
-        val view : View = LayoutInflater.from(context).inflate(R.layout.calc_list_item, null)
+        val view : View = LayoutInflater.from(context).inflate(R.layout.calc_list_item, parent,false)
 
         val listViewMaterial = view.findViewById<EditText>(R.id.listViewMaterial)
         val listViewDegree = view.findViewById<EditText>(R.id.listViewDegree)
