@@ -1,13 +1,19 @@
 package com.example.alcoholcalculator
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ListView
+import android.widget.ScrollView
 import android.widget.TextView
+import androidx.core.view.size
 import com.example.alcoholcalculator.databinding.ActivityMainBinding
 import com.example.alcoholcalculator.databinding.CalcListItemBinding
+import kotlinx.coroutines.Runnable
 
 class MainActivity : AppCompatActivity() {
 //    binding
@@ -17,7 +23,8 @@ class MainActivity : AppCompatActivity() {
 //    private val cbinding get() = cistBinding!!
 
 //    변수
-    private lateinit var calclistView : ListView
+    private lateinit var calcListView : ListView
+    lateinit var scrollView: ScrollView
     private val calcList = arrayListOf<CalcItem>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,20 +37,17 @@ class MainActivity : AppCompatActivity() {
 
         //calcListViewAdapter.kt 연결
         val calcAdapter = CalcListViewAdapter(this, calcList)
-
         // activity_main.xml의 요소인 listview를 calclistView와 연결
         // 여기서의 calclistView는 요소 추가, 요소 삭제, 수정 등의 작업을 함
-        calclistView = mbinding.listview
-        calclistView.adapter = calcAdapter
+        calcListView = mbinding.listview
+        calcListView.adapter = calcAdapter
 
         val addButton : Button = mbinding.add
         addButton.setOnClickListener {
             val count : Int = calcAdapter.count
             calcList.add(count,CalcItem("",0f,0f))
             calcAdapter.notifyDataSetChanged()
+            calcListView.transcriptMode = ListView.TRANSCRIPT_MODE_ALWAYS_SCROLL
         }
-
-
-
     }
 }

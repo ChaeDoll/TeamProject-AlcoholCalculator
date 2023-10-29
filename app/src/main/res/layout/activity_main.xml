@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity"
-    >
+    tools:context=".MainActivity">
     <!--가장 큰 LinearLayout-->
     <!--    LinearLayout은 한쪽 방향으로만 view가 쌓이므로 orientation 속성이 필수 속성, 추가하지 않으면 오류 발생-->
     <LinearLayout
@@ -16,27 +15,34 @@
         android:weightSum="10">
 
         <ScrollView
+            android:id="@+id/scrollView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="55dp"
+            android:layout_marginBottom="13dp"
             android:layout_weight="4"
-            android:fillViewport="true"
-            >
+            android:background="@drawable/main_content_background"
+            android:elevation="10dp"
+            android:fillViewport="true">
 
 
             <ListView
                 android:id="@+id/listview"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:choiceMode="singleChoice" />
-
-
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:choiceMode="singleChoice"
+                android:divider="@drawable/main_content_background"
+                android:dividerHeight="6dp" />
         </ScrollView>
-
+        <!-- 버튼 3개 linearlayout -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal"
+            android:gravity="center"
             android:weightSum="3">
 
 
@@ -52,17 +58,34 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1.5"
+                android:layout_marginHorizontal="12dp"
                 android:text="계산 결과" />
+
             <Button
                 android:id="@+id/add"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.5"
                 android:text="+" />
-
-
-<!-- 버튼 3개 linearlayout -->
         </LinearLayout>
-<!-- listviwe linearLayout -->
+        <!--여백-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        <!-- listview linearLayout -->
+        <LinearLayout
+            android:background="@drawable/main_content_background"
+            android:layout_marginHorizontal="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3.5">
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:text="지나친 음주는 건강에 해롭습니다"/>
     </LinearLayout>
 </LinearLayout>

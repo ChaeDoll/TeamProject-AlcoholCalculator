@@ -6,17 +6,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearLayout"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:layout_height="50dp"
     android:orientation="horizontal"
-    android:weightSum="5" >
+    >
 
     <!--이름 / 도수 /양-->
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="4"
+        android:layout_weight="5"
         android:orientation="horizontal"
+        android:background="@drawable/listview_item_background"
         android:weightSum="3">
 
         <EditText
@@ -73,9 +74,13 @@
     </LinearLayout>
 
     <Button
+        android:layout_marginHorizontal="12dp"
+        android:layout_gravity="center_vertical"
         android:id="@+id/listViewButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.5"
+        android:background="@drawable/listview_delete_button"
+        android:textColor="@color/white"
+        android:textSize="35dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:text="-" />
 </LinearLayout>
