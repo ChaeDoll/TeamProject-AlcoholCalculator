@@ -1,6 +1,7 @@
 package com.example.alcoholcalculator
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,22 +23,30 @@ class CalcListViewAdapter(private val context:Context, private val calcItems: Ar
     override fun getItemId(position: Int): Long = position.toLong() // 해당 위치 요소 id 반환
 
 
-    override fun getView(position: Int, converView: View?, parent: ViewGroup?): View { //list_item.xml의 view와 데이터간의 연동이 이루어짐
-        val view : View = LayoutInflater.from(context).inflate(R.layout.calc_list_item, parent,false)
+    override fun getView(position: Int, view: View?, parent: ViewGroup?): View? { //list_item.xml의 view와 데이터간의 연동이 이루어짐
 
-        val listViewMaterial = view.findViewById<EditText>(R.id.listViewMaterial)
-        val listViewDegree = view.findViewById<EditText>(R.id.listViewDegree)
-        val listViewAmount = view.findViewById<EditText>(R.id.listViewAmount)
-        val listViewButton = view.findViewById<Button>(R.id.listViewButton)
-        val text1 = view.findViewById<TextView>(R.id.listViewText1)
-        val text2 = view.findViewById<TextView>(R.id.listViewText2)
+        var convertView = view
+        var viewHolder: CalcViewHolder
+        if(convertView == null){
+            convertView = LayoutInflater.from(context).inflate(R.layout.calc_list_item, parent,false)
+            viewHolder = CalcViewHolder()
+            viewHolder.listViewMaterial = convertView.findViewById<EditText>(R.id.listViewMaterial)
+            viewHolder.listViewDegree = convertView.findViewById<EditText>(R.id.listViewDegree)
+            viewHolder.listViewAmount =convertView.findViewById<EditText>(R.id.listViewAmount)
+            convertView.tag=viewHolder
+        }
+        else{
+            viewHolder = convertView.tag as CalcViewHolder
+        }
+        viewHolder.ref = position
+
 
         val calc = calcItems[position]
-        listViewMaterial.setText(calc.material_)
-        listViewDegree.setText("${calc.degree_}") //얘는 int로 했고
-        listViewAmount.setText("${calc.amount_}") //얘는 float로 하는 방법을 해봄
+        viewHolder.listViewAmount?.setText(calc.material_)
 
-        return view
+        viewHolder.listViewDegree?.setText("${calc.degree_}") //얘는 int로 했고
+        viewHolder.listViewAmount?.setText("${calc.amount_}") //얘는 float로 하는 방법을 해봄
+        return convertView
 
     }
 }
