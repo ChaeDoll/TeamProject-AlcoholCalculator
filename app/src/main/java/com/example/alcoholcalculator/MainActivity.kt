@@ -3,6 +3,8 @@ package com.example.alcoholcalculator
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import android.view.animation.Animation
@@ -10,6 +12,7 @@ import android.view.animation.AnimationSet
 import android.view.inputmethod.InputMethod
 import android.view.inputmethod.InputMethodManager
 import android.widget.*
+import androidx.core.widget.doAfterTextChanged
 import com.example.alcoholcalculator.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
