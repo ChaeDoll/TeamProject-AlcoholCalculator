@@ -59,7 +59,8 @@ class CalcListViewAdapter(private val context:Context, private val calcItems: Ar
         //Degree EditText 변경 이벤트
         viewHolder.listViewDegree.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            }
             override fun afterTextChanged(s: Editable?) {
                 calcItems[viewHolder.ref].degree_ = viewHolder.listViewDegree.text
             }

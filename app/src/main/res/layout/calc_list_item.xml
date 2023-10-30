@@ -33,7 +33,8 @@
             android:minHeight="48dp"
             android:ellipsize="end"
             android:layout_marginHorizontal="20dp"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            />
 
         <EditText
             android:id="@+id/listViewDegree"
@@ -53,7 +54,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.3"
-            android:textSize="18dp"
+            android:textSize="18sp"
             android:text="%" />
 
 
@@ -75,7 +76,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.3"
-            android:textSize="18dp"
+            android:textSize="18sp"
+            android:singleLine="true"
             android:text="ml" />
 
 
