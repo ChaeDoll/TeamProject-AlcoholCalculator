@@ -42,6 +42,10 @@ class MainActivity : AppCompatActivity() {
         // 계산 아이템 추가 버튼
         val addButton : Button = mbinding.add
         addButton.setOnClickListener {
+            if(calcList.size == 10) {
+                Toast.makeText(this, "재료를 추가할 수 없습니다 (최대 10개)", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
             calcList.add(CalcItem("", "", ""))
             calcAdapter.notifyDataSetChanged()
             calcListView.transcriptMode = ListView.TRANSCRIPT_MODE_NORMAL
@@ -55,10 +59,14 @@ class MainActivity : AppCompatActivity() {
             calcAdapter.notifyDataSetChanged()
             Toast.makeText(this, "초기화 되었습니다.", Toast.LENGTH_SHORT).show()
         }
-// 결과 버튼
-        val buttonResult : Button = mbinding.resultButton
-        val textViewTmp : TextView = mbinding.textViewTmp
-        buttonResult.setOnClickListener {
+        // 결과 버튼
+        val resultButton : Button = mbinding.resultButton
+        val resultView : TextView = mbinding.resultView
+        resultButton.setOnClickListener{
+            //계산결과 버튼누르면 키보드 숨김
+            val inputManager : InputMethodManager = this.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            inputManager.hideSoftInputFromWindow(this.currentFocus?.windowToken, InputMethodManager.HIDE_NOT_ALWAYS)
+            
             var sumAmount : Float = 0f // 총 양
             var sumDegree  : Float = 0f // 양 * 도수의 총 합
             for(i in 0 .. calcList.size-1 step(1)){
@@ -72,10 +80,8 @@ class MainActivity : AppCompatActivity() {
             val degree : Float = (sumDegree/sumAmount)
             val c = String.format("%.2f",degree)
 
-            val tmp : String = "총 양 " + sumAmount.toString() + "도수 "+c
-            textViewTmp.setText(tmp)
-
-
+            val result : String = "총 양 " + sumAmount.toString() + "도수 "+c
+            resultView.setText(result)
         }
     }
 }

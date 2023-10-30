@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.core.text.set
 import androidx.core.widget.addTextChangedListener
 
 class CalcListViewAdapter(private val context:Context, private val calcItems: ArrayList<CalcItem>):BaseAdapter() {
@@ -62,7 +63,11 @@ class CalcListViewAdapter(private val context:Context, private val calcItems: Ar
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
             }
             override fun afterTextChanged(s: Editable?) {
-                calcItems[viewHolder.ref].degree_ = viewHolder.listViewDegree.text
+                if (s!=null && !s.toString().equals("") && s.toString().toFloat() > 100) {
+                    calcItems[viewHolder.ref].degree_ = 100
+                    notifyDataSetChanged()
+                }
+                else calcItems[viewHolder.ref].degree_ = viewHolder.listViewDegree.text
             }
         })
         //Amount EditText 변경 이벤트

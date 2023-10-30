@@ -20,6 +20,7 @@
         android:background="@drawable/listview_item_background"
         android:paddingTop="3dp"
         android:paddingRight="30dp"
+
         android:weightSum="3">
 
         <EditText
