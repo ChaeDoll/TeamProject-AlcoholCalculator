@@ -24,7 +24,8 @@
 
         <EditText
             android:id="@+id/listViewMaterial"
-            android:layout_width="0dp"            android:background="@null"
+            android:layout_width="0dp"
+            android:background="@null"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="재료"
@@ -44,7 +45,7 @@
             android:inputType="numberDecimal"
             android:minWidth="48dp"
             android:minHeight="48dp"
-            android:maxLength="3"
+            android:maxLength="5"
             android:textAlignment="center" />
 
         <TextView
