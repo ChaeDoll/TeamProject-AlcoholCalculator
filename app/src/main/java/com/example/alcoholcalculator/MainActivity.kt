@@ -52,11 +52,27 @@ class MainActivity : AppCompatActivity() {
             calcAdapter.notifyDataSetChanged()
             Toast.makeText(this, "초기화 되었습니다.", Toast.LENGTH_SHORT).show()
         }
-        // 결과 버튼
-        val resultButton : Button = mbinding.resultButton
-        resultButton.setOnClickListener{
-            val inputManager : InputMethodManager = this.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-            inputManager.hideSoftInputFromWindow(this.currentFocus?.windowToken, InputMethodManager.HIDE_NOT_ALWAYS)
+// 결과 버튼
+        val buttonResult : Button = mbinding.resultButton
+        val textViewTmp : TextView = mbinding.textViewTmp
+        buttonResult.setOnClickListener {
+            var sumAmount : Float = 0f // 총 양
+            var sumDegree  : Float = 0f // 양 * 도수의 총 합
+            for(i in 0 .. calcList.size-1 step(1)){
+                //a나 b가 빈 값이면 안됨
+                val a = calcList.get(i).amount_.toString()
+                val b = calcList.get(i).degree_.toString()
+                sumAmount += (a.toFloat())
+                sumDegree += (a.toFloat()) * (b.toFloat())
+            }
+
+            val degree : Float = (sumDegree/sumAmount)
+            val c = String.format("%.2f",degree)
+
+            val tmp : String = "총 양 " + sumAmount.toString() + "도수 "+c
+            textViewTmp.setText(tmp)
+
+
         }
     }
 }
