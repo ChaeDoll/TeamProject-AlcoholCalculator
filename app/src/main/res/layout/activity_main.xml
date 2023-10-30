@@ -47,7 +47,7 @@
 
 
             <Button
-                android:id="@+id/delete"
+                android:id="@+id/clear"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.5"

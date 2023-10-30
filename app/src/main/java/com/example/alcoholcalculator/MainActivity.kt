@@ -43,11 +43,19 @@ class MainActivity : AppCompatActivity() {
         calcListView = mbinding.listview
         calcListView.adapter = calcAdapter
 
+        // 계산 아이템 추가 버튼
         val addButton : Button = mbinding.add
         addButton.setOnClickListener {
             calcList.add(CalcItem("", "", ""))
             calcAdapter.notifyDataSetChanged()
             calcListView.transcriptMode = ListView.TRANSCRIPT_MODE_NORMAL
+        }
+        val clearButton : Button = mbinding.clear
+        // 초기화 버튼
+        clearButton.setOnClickListener{
+            calcList.clear()
+            calcList.add(CalcItem("", "", ""))
+            calcAdapter.notifyDataSetChanged()
         }
     }
 }
