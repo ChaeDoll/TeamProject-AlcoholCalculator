@@ -6,8 +6,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearLayout"
-    android:layout_width="wrap_content"
-    android:layout_height="50dp"
+    android:layout_width="match_parent"
+    android:layout_height="53dp"
     android:orientation="horizontal"
     >
 
@@ -18,18 +18,20 @@
         android:layout_weight="5"
         android:orientation="horizontal"
         android:background="@drawable/listview_item_background"
+        android:paddingTop="3dp"
+        android:paddingRight="30dp"
         android:weightSum="3">
 
         <EditText
             android:id="@+id/listViewMaterial"
-            android:layout_width="0dp"
+            android:layout_width="0dp"            android:background="@null"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:ems="10"
             android:hint="재료"
             android:inputType="textPersonName"
-            android:minWidth="48dp"
             android:minHeight="48dp"
+            android:ellipsize="end"
+            android:layout_marginHorizontal="20dp"
             android:textAlignment="center" />
 
         <EditText
@@ -38,9 +40,11 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.7"
             android:hint="도수"
+            android:background="@null"
             android:inputType="numberDecimal"
             android:minWidth="48dp"
             android:minHeight="48dp"
+            android:maxLength="3"
             android:textAlignment="center" />
 
         <TextView
@@ -48,19 +52,21 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.3"
+            android:textSize="18dp"
             android:text="%" />
 
 
         <EditText
             android:id="@+id/listViewAmount"
+            android:background="@null"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.7"
-            android:ems="10"
             android:hint="양"
             android:inputType="numberDecimal"
             android:minWidth="48dp"
             android:minHeight="48dp"
+            android:maxLength="5"
             android:textAlignment="center" />
 
         <TextView
@@ -68,6 +74,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.3"
+            android:textSize="18dp"
             android:text="ml" />
 
 

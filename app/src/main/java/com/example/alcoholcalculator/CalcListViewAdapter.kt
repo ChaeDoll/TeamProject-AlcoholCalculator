@@ -1,14 +1,14 @@
 package com.example.alcoholcalculator
 
 import android.content.Context
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
+import android.widget.*
+import androidx.core.widget.addTextChangedListener
 
 class CalcListViewAdapter(private val context:Context, private val calcItems: ArrayList<CalcItem>):BaseAdapter() {
 //    private var listBinding: ListItemBinding?= null
@@ -22,43 +22,56 @@ class CalcListViewAdapter(private val context:Context, private val calcItems: Ar
 
     override fun getItemId(position: Int): Long = position.toLong() // 해당 위치 요소 id 반환
 
-
     override fun getView(position: Int, view: View?, parent: ViewGroup?): View? { //list_item.xml의 view와 데이터간의 연동이 이루어짐
-
         var convertView = view
-        var viewHolder: CalcViewHolder
-        if(convertView == null){
-            convertView = LayoutInflater.from(context).inflate(R.layout.calc_list_item, parent,false)
+        val viewHolder: CalcViewHolder
+        if (convertView == null) {
+            convertView = LayoutInflater.from(context).inflate(R.layout.calc_list_item, parent, false)
             viewHolder = CalcViewHolder()
+            viewHolder.ref = position
             viewHolder.listViewMaterial = convertView.findViewById<EditText>(R.id.listViewMaterial)
             viewHolder.listViewDegree = convertView.findViewById<EditText>(R.id.listViewDegree)
             viewHolder.listViewAmount = convertView.findViewById<EditText>(R.id.listViewAmount)
             viewHolder.listViewButton = convertView.findViewById<Button>(R.id.listViewButton)
-
-            convertView.tag=viewHolder
-        }
-        else{
+            convertView.tag = viewHolder
+        } else {
             viewHolder = convertView.tag as CalcViewHolder
             viewHolder.ref = position
+            viewHolder.listViewMaterial.setText(calcItems[viewHolder.ref].material_)
+            viewHolder.listViewDegree.setText("${calcItems[viewHolder.ref].degree_}")
+            viewHolder.listViewAmount.setText("${calcItems[viewHolder.ref].amount_}")
         }
 
-
-        val calc = calcItems[position]
-        viewHolder.listViewAmount?.setText(calc.material_)
-
-        viewHolder.listViewDegree?.setText("${calc.degree_}") //얘는 int로 했고
-        viewHolder.listViewAmount?.setText("${calc.amount_}") //얘는 float로 하는 방법을 해봄
-
-        //        삭제 함수
-
+        //삭제 함수
         viewHolder.listViewButton.setOnClickListener {
+            Log.d("viewManager", viewHolder.ref.toString() + "번 Item을 삭제합니다")
             calcItems.removeAt(viewHolder.ref)
             this.notifyDataSetChanged()
-
         }
-
-
+        //Material EditText 변경 이벤트
+        viewHolder.listViewMaterial.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+            override fun afterTextChanged(s: Editable?) {
+                calcItems[viewHolder.ref].material_ = viewHolder.listViewMaterial.text.toString()
+            }
+        })
+        //Degree EditText 변경 이벤트
+        viewHolder.listViewDegree.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+            override fun afterTextChanged(s: Editable?) {
+                calcItems[viewHolder.ref].degree_ = viewHolder.listViewDegree.text
+            }
+        })
+        //Amount EditText 변경 이벤트
+        viewHolder.listViewAmount.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+            override fun afterTextChanged(s: Editable?) {
+                calcItems[viewHolder.ref].amount_ = viewHolder.listViewAmount.text
+            }
+        })
         return convertView
-
     }
 }

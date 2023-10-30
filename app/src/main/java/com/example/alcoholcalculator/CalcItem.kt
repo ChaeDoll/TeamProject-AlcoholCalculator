@@ -1,3 +1,3 @@
 package com.example.alcoholcalculator
 
-data class CalcItem(val material_ : String, val degree_ : Float, val amount_ : Float)
+data class CalcItem(var material_ : String, var degree_ : Any?, var amount_ : Any?)

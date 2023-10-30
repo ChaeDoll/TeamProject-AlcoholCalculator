@@ -45,8 +45,7 @@ class MainActivity : AppCompatActivity() {
 
         val addButton : Button = mbinding.add
         addButton.setOnClickListener {
-            val count : Int = calcAdapter.count
-            calcList.add(count,CalcItem("",0f,0f))
+            calcList.add(CalcItem("", "", ""))
             calcAdapter.notifyDataSetChanged()
             calcListView.transcriptMode = ListView.TRANSCRIPT_MODE_ALWAYS_SCROLL
         }
