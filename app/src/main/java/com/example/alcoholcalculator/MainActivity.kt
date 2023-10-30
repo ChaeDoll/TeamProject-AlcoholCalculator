@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
         addButton.setOnClickListener {
             calcList.add(CalcItem("", "", ""))
             calcAdapter.notifyDataSetChanged()
-            calcListView.transcriptMode = ListView.TRANSCRIPT_MODE_ALWAYS_SCROLL
+            calcListView.transcriptMode = ListView.TRANSCRIPT_MODE_NORMAL
         }
     }
 }
