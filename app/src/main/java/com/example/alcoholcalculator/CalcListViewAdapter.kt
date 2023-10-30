@@ -32,13 +32,15 @@ class CalcListViewAdapter(private val context:Context, private val calcItems: Ar
             viewHolder = CalcViewHolder()
             viewHolder.listViewMaterial = convertView.findViewById<EditText>(R.id.listViewMaterial)
             viewHolder.listViewDegree = convertView.findViewById<EditText>(R.id.listViewDegree)
-            viewHolder.listViewAmount =convertView.findViewById<EditText>(R.id.listViewAmount)
+            viewHolder.listViewAmount = convertView.findViewById<EditText>(R.id.listViewAmount)
+            viewHolder.listViewButton = convertView.findViewById<Button>(R.id.listViewButton)
+
             convertView.tag=viewHolder
         }
         else{
             viewHolder = convertView.tag as CalcViewHolder
+            viewHolder.ref = position
         }
-        viewHolder.ref = position
 
 
         val calc = calcItems[position]
@@ -46,6 +48,16 @@ class CalcListViewAdapter(private val context:Context, private val calcItems: Ar
 
         viewHolder.listViewDegree?.setText("${calc.degree_}") //얘는 int로 했고
         viewHolder.listViewAmount?.setText("${calc.amount_}") //얘는 float로 하는 방법을 해봄
+
+        //        삭제 함수
+
+        viewHolder.listViewButton.setOnClickListener {
+            calcItems.removeAt(viewHolder.ref)
+            this.notifyDataSetChanged()
+
+        }
+
+
         return convertView
 
     }
