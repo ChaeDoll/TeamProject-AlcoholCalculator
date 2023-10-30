@@ -1,16 +1,16 @@
 package com.example.alcoholcalculator
 
 import android.graphics.Color
+import android.graphics.drawable.AnimatedVectorDrawable
+import android.graphics.drawable.AnimationDrawable
 import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ListView
-import android.widget.ScrollView
-import android.widget.TextView
+import android.view.animation.Animation
+import android.view.animation.AnimationSet
+import android.widget.*
 import androidx.core.view.size
 import com.example.alcoholcalculator.databinding.ActivityMainBinding
 import com.example.alcoholcalculator.databinding.CalcListItemBinding
@@ -36,6 +36,8 @@ class MainActivity : AppCompatActivity() {
         //calc_list_item.xml 연결
 //        cistBinding = CalcListItemBinding.inflate(layoutInflater)
 
+        calcList.add(CalcItem("", "", ""))
+        calcList.add(CalcItem("", "", ""))
         //calcListViewAdapter.kt 연결
         val calcAdapter = CalcListViewAdapter(this, calcList)
         // activity_main.xml의 요소인 listview를 calclistView와 연결
@@ -50,12 +52,14 @@ class MainActivity : AppCompatActivity() {
             calcAdapter.notifyDataSetChanged()
             calcListView.transcriptMode = ListView.TRANSCRIPT_MODE_NORMAL
         }
-        val clearButton : Button = mbinding.clear
+        val clearButton : ImageButton = mbinding.clear
         // 초기화 버튼
         clearButton.setOnClickListener{
             calcList.clear()
             calcList.add(CalcItem("", "", ""))
+            calcList.add(CalcItem("", "", ""))
             calcAdapter.notifyDataSetChanged()
+            Toast.makeText(this, "초기화 되었습니다.", Toast.LENGTH_SHORT).show()
         }
     }
 }
