@@ -46,6 +46,9 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "재료를 추가할 수 없습니다 (최대 10개)", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
+            val inputManager : InputMethodManager = this.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            inputManager.hideSoftInputFromWindow(this.currentFocus?.windowToken, InputMethodManager.HIDE_NOT_ALWAYS)
+
             calcList.add(CalcItem("", "", ""))
             calcAdapter.notifyDataSetChanged()
             calcListView.transcriptMode = ListView.TRANSCRIPT_MODE_NORMAL
@@ -83,5 +86,11 @@ class MainActivity : AppCompatActivity() {
             val result : String = "총 양 " + sumAmount.toString() + "도수 "+c
             resultView.setText(result)
         }
+    }
+    //뒤로가기 눌렀을 때 종료되도록 함. 홈,탐색 버튼으로는 종료되지 않음
+    override fun onBackPressed() {
+        super.onBackPressed()
+        Log.d("Help", "App is Down")
+        finish()
     }
 }

@@ -7,33 +7,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
-    android:layout_height="53dp"
-    android:orientation="horizontal"
-    >
+    android:layout_height="53dp">
 
     <!--이름 / 도수 /양-->
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="5"
-        android:orientation="horizontal"
         android:background="@drawable/listview_item_background"
+        android:orientation="horizontal"
         android:paddingTop="3dp"
         android:paddingRight="30dp"
-
         android:weightSum="3">
 
         <EditText
             android:id="@+id/listViewMaterial"
             android:layout_width="0dp"
-            android:background="@null"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:layout_weight="1"
             android:hint="재료"
+            android:textColorHint="#C0C0C0"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:ellipsize="end"
-            android:layout_marginLeft="20dp"
+            android:nextFocusDown="@id/listViewDegree"
             android:textAlignment="center"
             />
 
@@ -42,56 +39,62 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="도수"
             android:background="@null"
+            android:hint="도수"
+            android:textColorHint="#C0C0C0"
             android:inputType="numberDecimal"
+            android:maxLength="5"
             android:minWidth="48dp"
             android:minHeight="48dp"
-            android:maxLength="5"
+            android:nextFocusDown="@id/listViewAmount"
             android:textAlignment="center" />
 
         <TextView
             android:id="@+id/listViewText1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="%"
             android:textSize="20sp"
-            android:textStyle="bold"
-            android:text="%" />
+            android:textStyle="bold" />
 
 
         <EditText
             android:id="@+id/listViewAmount"
-            android:background="@null"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@null"
             android:hint="양"
+            android:textColorHint="#C0C0C0"
             android:inputType="numberDecimal"
+            android:maxLength="5"
             android:minWidth="48dp"
             android:minHeight="48dp"
-            android:maxLength="5"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:nextFocusDown="@id/listViewMaterial"
+            android:imeOptions="actionDone" />
+
 
         <TextView
             android:id="@+id/listViewText2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
             android:singleLine="true"
-            android:textStyle="bold"
-            android:text="ml" />
+            android:text="ml"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
 
     </LinearLayout>
 
     <Button
-        android:layout_marginHorizontal="12dp"
-        android:layout_gravity="center_vertical"
         android:id="@+id/listViewButton"
-        android:background="@drawable/listview_delete_button"
-        android:textColor="@color/white"
-        android:textSize="35dp"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:text="-" />
+        android:layout_gravity="center_vertical"
+        android:layout_marginHorizontal="12dp"
+        android:background="@drawable/listview_delete_button"
+        android:text="-"
+        android:textColor="@color/white"
+        android:textSize="35sp" />
 </LinearLayout>
