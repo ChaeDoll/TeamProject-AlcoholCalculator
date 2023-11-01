@@ -65,26 +65,49 @@ class MainActivity : AppCompatActivity() {
         // 결과 버튼
         val resultButton : Button = mbinding.resultButton
         val resultView : TextView = mbinding.resultView
-        resultButton.setOnClickListener{
-            //계산결과 버튼누르면 키보드 숨김
-            val inputManager : InputMethodManager = this.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-            inputManager.hideSoftInputFromWindow(this.currentFocus?.windowToken, InputMethodManager.HIDE_NOT_ALWAYS)
-            
+        resultButton.setOnClickListener {
             var sumAmount : Float = 0f // 총 양
-            var sumDegree  : Float = 0f // 양 * 도수의 총 합
-            for(i in 0 .. calcList.size-1 step(1)){
-                //a나 b가 빈 값이면 안됨
-                val a = calcList.get(i).amount_.toString()
-                val b = calcList.get(i).degree_.toString()
-                sumAmount += (a.toFloat())
-                sumDegree += (a.toFloat()) * (b.toFloat())
+            var sumAlcohol  : Float = 0f // 양 * 도수의 총 합
+            for(i in 0 until calcList.size-1 step(1)) {
+                var amountString = calcList.get(i).amount_.toString()
+                var degreeString = calcList.get(i).degree_.toString()
+
+                // 전부 if로 한 이유는 else if로 할 경우 if가 우선, else if가 차선이 되어
+                //반응 속도가 한 박자 느리기 때문임
+                if (amountString == "" && degreeString == "") {
+                    // 아무것도 할 게 없다.
+                    calcList[i].amount_ = 0
+                    calcList[i].degree_ = 0
+                } else if (amountString == "" && degreeString != "") {
+                    calcList[i].amount_ = 0
+
+                } else if (amountString != "" && degreeString == "") {
+                    calcList[i].degree_ = 0
+                    sumAmount += (amountString.toFloat())
+                } else {
+                    sumAmount += (amountString.toFloat())
+                    sumAlcohol += (amountString.toFloat()) * (degreeString.toFloat())
+                }
+
+                calcAdapter.notifyDataSetChanged()
+
+                //sumAmount가 0일 경우 대처할 if문 필요
+                val degree : Float
+                if (sumAmount == 0f) {
+                    // sumAmount가 0일 때 degree값이 nan는 에러 해결 코드
+                    degree = 0f
+                }
+                else{
+                    degree = (sumAlcohol / sumAmount)
+                }
+                val degreeToFixed = String.format("%.2f", degree)
+
+
+                //결과 내용
+                val tmp: String = "총 양 " + sumAmount.toString() + "도수 " + degreeToFixed
+                resultView.text = tmp
+
             }
-
-            val degree : Float = (sumDegree/sumAmount)
-            val c = String.format("%.2f",degree)
-
-            val result : String = "총 양 " + sumAmount.toString() + "도수 "+c
-            resultView.setText(result)
         }
     }
     //뒤로가기 눌렀을 때 종료되도록 함. 홈,탐색 버튼으로는 종료되지 않음
@@ -94,3 +117,5 @@ class MainActivity : AppCompatActivity() {
         finish()
     }
 }
+
+// 총 양이 .0이면 Int처럼 소수점이면 소수점으로. -> 채윤이가 해결할 것
