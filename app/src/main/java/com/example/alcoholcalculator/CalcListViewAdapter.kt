@@ -24,6 +24,8 @@ class CalcListViewAdapter(private val context:Context, private val calcItems: Ar
     override fun getItemId(position: Int): Long = position.toLong() // 해당 위치 요소 id 반환
 
     override fun getView(position: Int, view: View?, parent: ViewGroup?): View? { //list_item.xml의 view와 데이터간의 연동이 이루어짐
+        // parent가 상위 layout
+
         var convertView = view
         val viewHolder: CalcViewHolder
         if (convertView == null) {
@@ -55,6 +57,9 @@ class CalcListViewAdapter(private val context:Context, private val calcItems: Ar
                 viewHolder.listViewAmount.setText("")
                 viewHolder.listViewDegree.setText("")
             }
+            // - 버튼을 눌렀을 때는 스크롤 고정
+            val parentList = parent?.findViewById<ListView>(R.id.listview)
+            parentList?.transcriptMode = ListView.TRANSCRIPT_MODE_NORMAL
         }
         //Material EditText 변경 이벤트
         viewHolder.listViewMaterial.addTextChangedListener(object : TextWatcher {
