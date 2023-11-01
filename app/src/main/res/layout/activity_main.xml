@@ -85,14 +85,15 @@
             android:layout_weight="1"/>
         <!-- listview linearLayout -->
         <LinearLayout
-            android:background="@drawable/main_content_background"
+            android:id="@+id/content_item"
             android:layout_marginHorizontal="15dp"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="3.5">
+            android:layout_weight="3.5"
+            android:orientation="vertical">
 
             <!--수정-->
-            <TextView
+<!--            <TextView
                 android:id="@+id/resultView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -101,7 +102,7 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:text="안녕하세요"
-                 />
+                 />-->
         </LinearLayout>
         <TextView
             android:layout_width="match_parent"

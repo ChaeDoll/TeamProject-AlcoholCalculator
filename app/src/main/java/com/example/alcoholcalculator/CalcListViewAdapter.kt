@@ -72,19 +72,15 @@ class CalcListViewAdapter(private val context:Context, private val calcItems: Ar
         //Degree EditText 변경 이벤트
         viewHolder.listViewDegree.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-            }
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
             override fun afterTextChanged(s: Editable?) {
-                Log.d("help", s.toString())
-/*                if (s.toString() != ".") {
-                    calcItems[viewHolder.ref].degree_ = 0f
-                    notifyDataSetChanged()
-                }*/
-                if (s!=null && s.toString() != "" && s.toString().toFloat() > 100) {
-                    calcItems[viewHolder.ref].degree_ = 100
-                    notifyDataSetChanged()
-                }
-                else calcItems[viewHolder.ref].degree_ = viewHolder.listViewDegree.text
+                // .문제 해결하기
+                    /*
+*//*                    else if (s.toString().toFloat() > 100) {
+                        calcItems[viewHolder.ref].degree_ = 100
+                        notifyDataSetChanged()
+                        */
+                calcItems[viewHolder.ref].degree_ = viewHolder.listViewDegree.text
             }
         })
         //Amount EditText 변경 이벤트
@@ -98,3 +94,4 @@ class CalcListViewAdapter(private val context:Context, private val calcItems: Ar
         return convertView
     }
 }
+// 총 양이 .0이면 Int처럼 소수점이면 소수점으로. -> 채윤이가 해결할 것

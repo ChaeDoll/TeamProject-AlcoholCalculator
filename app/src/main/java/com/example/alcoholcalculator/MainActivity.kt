@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationSet
@@ -33,6 +34,10 @@ class MainActivity : AppCompatActivity() {
         val calcList = arrayListOf<CalcItem>()
         val calcAdapter = CalcListViewAdapter(this, calcList) //calcListViewAdapter.kt 연결
         val calcListView : ListView = mbinding.listview
+        val parentLayout = findViewById<LinearLayout>(R.id.content_item)
+        val tips = LayoutInflater.from(this).inflate(R.layout.content_tips, null) as LinearLayout
+        val results = LayoutInflater.from(this).inflate(R.layout.content_results, null) as LinearLayout
+        parentLayout.addView(tips)
 
         calcListView.adapter = calcAdapter
 
@@ -63,7 +68,6 @@ class MainActivity : AppCompatActivity() {
 
         // 초기화 버튼
         val clearButton : ImageButton = mbinding.clearButton
-        val resultView : TextView = mbinding.resultView // 결과 내용
         clearButton.setOnClickListener{
             calcList.clear()
             calcList.add(CalcItem("", "", ""))
@@ -71,13 +75,19 @@ class MainActivity : AppCompatActivity() {
             calcAdapter.notifyDataSetChanged()
 
             // 결과 내용(수정)
-            resultView.text = ""
+            parentLayout.removeAllViews()
+            parentLayout.addView(tips)
             Toast.makeText(this, "초기화 되었습니다.", Toast.LENGTH_SHORT).show()
         }
         // 결과 버튼
         val resultButton : Button = mbinding.resultButton
-
         resultButton.setOnClickListener {
+            val inputManager : InputMethodManager = this.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            inputManager.hideSoftInputFromWindow(this.currentFocus?.windowToken, InputMethodManager.HIDE_NOT_ALWAYS)
+            //result content 불러오기
+            parentLayout.removeAllViews()
+            parentLayout.addView(results)
+
             var sumAmount : Float = 0f // 총 양
             var sumAlcohol  : Float = 0f // 양 * 도수의 총 합
 
@@ -117,7 +127,9 @@ class MainActivity : AppCompatActivity() {
 
             // 결과 내용(수정)
             val tmp: String = "총 양 " + sumAmount.toString() + "도수 " + degreeToFixed
-            resultView.text = tmp
+
+            results.findViewById<TextView>(R.id.resultDegree).text = "$degreeToFixed%"
+            results.findViewById<TextView>(R.id.resultAmount).text = "${sumAmount}ml"
         }
     } //fun onCreate 끝
 
@@ -128,5 +140,3 @@ class MainActivity : AppCompatActivity() {
         finish()
     }
 }
-
-// 총 양이 .0이면 Int처럼 소수점이면 소수점으로. -> 채윤이가 해결할 것
