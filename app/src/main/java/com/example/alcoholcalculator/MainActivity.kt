@@ -68,7 +68,7 @@ class MainActivity : AppCompatActivity() {
         resultButton.setOnClickListener {
             var sumAmount : Float = 0f // 총 양
             var sumAlcohol  : Float = 0f // 양 * 도수의 총 합
-            for(i in 0 until calcList.size-1 step(1)) {
+            for(i in 0 until calcList.size step(1)) {
                 var amountString = calcList.get(i).amount_.toString()
                 var degreeString = calcList.get(i).degree_.toString()
 
