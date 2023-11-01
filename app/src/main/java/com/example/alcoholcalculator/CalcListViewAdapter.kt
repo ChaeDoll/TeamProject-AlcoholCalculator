@@ -46,8 +46,15 @@ class CalcListViewAdapter(private val context:Context, private val calcItems: Ar
         //삭제 함수
         viewHolder.listViewButton.setOnClickListener {
             Log.d("viewManager", viewHolder.ref.toString() + "번 Item을 삭제합니다")
-            calcItems.removeAt(viewHolder.ref)
-            this.notifyDataSetChanged()
+            if(calcItems.size>2) {
+                calcItems.removeAt(viewHolder.ref)
+                this.notifyDataSetChanged()
+            }
+            else{
+                viewHolder.listViewMaterial.setText("")
+                viewHolder.listViewAmount.setText("")
+                viewHolder.listViewDegree.setText("")
+            }
         }
         //Material EditText 변경 이벤트
         viewHolder.listViewMaterial.addTextChangedListener(object : TextWatcher {
