@@ -9,4 +9,7 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="soju_text">소주잔은 한 잔에 <b>70ml</b>입니다.</string>
+    <string name="beer_text">맥주잔은 한 잔에 <b>200ml</b>입니다.</string>
+    <string name="paper_text">종이컵은 한 잔에 <b>180ml</b>입니다.</string>
 </resources>

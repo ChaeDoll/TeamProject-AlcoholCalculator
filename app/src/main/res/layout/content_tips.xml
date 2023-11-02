@@ -4,17 +4,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/main_content_background"
+    android:paddingVertical="40dp"
+    android:gravity="center_vertical"
     >
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="안녕하세요"/>
+        android:text="@string/beer_text"
+        android:textSize="17sp"
+        android:padding="15dp"
+        android:layout_marginLeft="30dp"
+        />
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="안녕안녕요"/>
+        android:text="@string/soju_text"
+        android:padding="15dp"
+        android:textSize="17sp"
+        android:layout_marginLeft="30dp"
+        />
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="바이바이..."/>
+        android:text="@string/paper_text"
+        android:padding="15dp"
+        android:textSize="17sp"
+        android:layout_marginLeft="30dp"
+        />
 </LinearLayout>
