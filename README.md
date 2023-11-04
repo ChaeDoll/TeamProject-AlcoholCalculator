@@ -54,6 +54,9 @@
 <br>
 
 ## 구현 사항
+- 재료 입력 (재료명, 도수, 양)
+- 음수 입력 방지 (도수, 양)
+- 소수점 입력 가능
 <img src="https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/b754cc30-e90d-4dab-bafc-d8f674a37e0b" width="50%"/>
 
 
