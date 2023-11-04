@@ -4,7 +4,7 @@
 ## 🎬미리보기 (시연)🎬
 <img src="https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/67ee9fc2-763e-4889-8416-3b7395974ada" width="30%"/>  
 
-<img src="https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/398915c5-056c-45f0-b671-64967aae80b2" width="64%"/>
+<img src="https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/398915c5-056c-45f0-b671-64967aae80b2" width="62%"/>
 
 <br>  
 
