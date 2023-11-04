@@ -54,11 +54,13 @@
 <br>
 
 ## 구현 사항
+### 재료입력
 - 재료 입력 (재료명, 도수, 양)
 - 음수 입력 방지 (도수, 양)
 - 소수점 입력 가능
 <img src="https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/b754cc30-e90d-4dab-bafc-d8f674a37e0b" width="50%"/>
 
+### 아이템 관리
 - '+' 버튼 입력하여 재료 추가 / 최하단으로 스크롤 이동
 - '-' 버튼 입력하여 재료 제거 / 스크롤 이동 X
 - 재료 아이템을 서브창에 입력받아 사용자가 관리할 수 있도록 함
