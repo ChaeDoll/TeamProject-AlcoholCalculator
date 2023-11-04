@@ -45,6 +45,7 @@
 <br>
 
 ## 프로젝트 설치 및 실행방법
+APK 다운로드 : https://drive.google.com/file/d/1QZw8nJDJmT22G1pasfwWSQu_lRHaVyzg/view?usp=sharing
 
 <br>
 
