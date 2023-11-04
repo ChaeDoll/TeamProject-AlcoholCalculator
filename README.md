@@ -67,11 +67,17 @@
 - 재료 아이템을 서브창에 입력받아 사용자가 관리할 수 있도록 함
 <img src="https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/e8a795ef-74ec-4bca-81e3-8552a5248054" width="50%"/>
 
-### 
-- 
 <img src="https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/ae9f346c-2527-4d12-9da1-f3b995fbe091" width="50%"/>
 
+### 결과 창
+- 키패드 다음 버튼으로 옆의 입력창으로 이동
+- 입력받은 값을 토대로 결과값 출력창으로 이동
+- 빈 칸이 존재하면 해당 칸 값을 0으로 계산
+- 빈 칸을 0 값으로 설정하여 사용자에게 표시
+<img src="https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/c26c3bde-913a-410f-8e42-a0e0550ef669" width="50%"/>
 
+### 아이템 초기화
+- 초기화 버튼 눌러서 재료 아이템 초기화 및 '팁'창으로 이동
 <br>
 
 <!--## API 명세서 및 라이브러리
