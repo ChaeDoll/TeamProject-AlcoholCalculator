@@ -67,6 +67,10 @@
 - 재료 아이템을 서브창에 입력받아 사용자가 관리할 수 있도록 함
 <img src="https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/e8a795ef-74ec-4bca-81e3-8552a5248054" width="50%"/>
 
+### 
+- 
+<img src="https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/ae9f346c-2527-4d12-9da1-f3b995fbe091" width="50%"/>
+
 
 <br>
 
