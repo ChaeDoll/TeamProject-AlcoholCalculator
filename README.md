@@ -1,8 +1,8 @@
 ![header](https://capsule-render.vercel.app/api?type=transparent&height=300&section=header&text=Alcohol%20Calculator&fontSize=90&fontColor=00994B)  
 
 # 알코올 도수 계산기
-## 🎬미리보기 (시연 영상)🎬
-![시연영상](https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/67ee9fc2-763e-4889-8416-3b7395974ada)
+## 🎬미리보기 (시연)🎬
+<img src="https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/67ee9fc2-763e-4889-8416-3b7395974ada" width="40%"></img>
 ![image](https://github.com/CaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/5471c1db-92ad-4725-9bd2-ae02bd160b22)
 
 
