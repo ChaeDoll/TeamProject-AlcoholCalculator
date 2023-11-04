@@ -78,6 +78,8 @@
 
 ### 아이템 초기화
 - 초기화 버튼 눌러서 재료 아이템 초기화 및 '팁'창으로 이동
+<img src="https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/b41495a6-e784-4984-8c43-5e9e813150c2" width="50%"/>
+
 <br>
 
 <!--## API 명세서 및 라이브러리
