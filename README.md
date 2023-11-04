@@ -2,9 +2,9 @@
 
 # 알코올 도수 계산기🍺 [(다운로드 LINK)](https://drive.google.com/file/d/1QZw8nJDJmT22G1pasfwWSQu_lRHaVyzg/view?usp=sharing)
 ## 🎬미리보기 (시연)🎬
-<img src="https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/67ee9fc2-763e-4889-8416-3b7395974ada" width="30%"/>  
+<img src="https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/70403548-f984-489e-acec-ca22eb597b57" width="30%"/>  
 
-<img src="https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/398915c5-056c-45f0-b671-64967aae80b2" width="62%"/>
+<img src="https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/3c4305c1-66ee-4c73-9968-0544c87ec1ab" width="62%"/>
 
 <br>  
 
