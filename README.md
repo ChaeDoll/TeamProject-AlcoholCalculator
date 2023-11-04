@@ -54,6 +54,8 @@
 <br>
 
 ## 구현 사항
+<img src="https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/b754cc30-e90d-4dab-bafc-d8f674a37e0b" width="50%"/>
+
 
 <br>
 
