@@ -51,10 +51,9 @@
 ## 개발 현황
 
 ## 디자인 변화
-![image](https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/17a65d3a-7ec3-4b2b-9290-c52d0784aafd)  
-![image](https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/05f49feb-7b20-4dd2-802c-616d7a462113)  
-![image](https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/15f164a8-d454-4909-b8dc-2aaaeab00e62)  
-![image](https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/73bed659-e57a-46aa-bd44-7c66ddbd0e4b)
-
+<img src="https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/17a65d3a-7ec3-4b2b-9290-c52d0784aafd" width="40%" />  
+<img src="https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/05f49feb-7b20-4dd2-802c-616d7a462113" width="80%" />  
+<img src="https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/15f164a8-d454-4909-b8dc-2aaaeab00e62" width="80%" />  
+<img src="https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/73bed659-e57a-46aa-bd44-7c66ddbd0e4b" width="40%" /> 
 
 
