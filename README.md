@@ -27,6 +27,7 @@
 <br>  
 
 ## ⚙사용 기술 (언어, 도구 및 데이터베이스)⚙
+<img alt="Kotlin" src ="https://img.shields.io/badge/Kotlin-7F52FF.svg?&style=for-the-badge&logo=Kotlin&logoColor=white"/> &nbsp;
 - Kotlin (코틀린 언어)
 - Android Studio (안드로이드 스튜디오 개발 환경)
 <br>
