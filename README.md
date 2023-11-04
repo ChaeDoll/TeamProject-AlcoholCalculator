@@ -1,6 +1,7 @@
 ![header](https://capsule-render.vercel.app/api?type=transparent&height=300&section=header&text=Alcohol%20Calculator&fontSize=90&fontColor=00994B)  
 
-# 알코올 도수 계산기
+# 알코올 도수 계산기 [(다운로드 LINK)](https://drive.google.com/file/d/1QZw8nJDJmT22G1pasfwWSQu_lRHaVyzg/view?usp=sharing
+)
 ## 🎬미리보기 (시연)🎬
 <img src="https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/67ee9fc2-763e-4889-8416-3b7395974ada" width="30%"/>  
 
