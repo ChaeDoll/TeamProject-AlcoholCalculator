@@ -18,7 +18,7 @@
 <br>  
 
 ## 👥프로젝트 참여자👥
-- *Client : 임채윤, 장소현*
+- *Client, Design : 임채윤, 장소현*
 
 > 임채윤 (Chaeyun Lim : GitHub Page => https://github.com/ChaeDoll)
 
