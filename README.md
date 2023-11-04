@@ -104,6 +104,6 @@
 
 ## 디자인 변화
 <img src="https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/2e992bf1-ccea-49f3-a8c4-44a255e64c54" width="30%" /> => 
-<img src="https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/65e7cc2b-b5a2-4fa8-9b3e-1ee861bc3c46" width="53%" /> => 
+<img src="https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/65e7cc2b-b5a2-4fa8-9b3e-1ee861bc3c46" width="50%" /> => 
 <img src="https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/863e8522-f628-41ed-a835-d572376f9ec7" width="58%" /> => 
-<img src="https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/1c2c2383-b3a7-4157-885d-47d35ef86ba6" width="25%" /> 
+<img src="https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/1c2c2383-b3a7-4157-885d-47d35ef86ba6" width="27%" /> 
