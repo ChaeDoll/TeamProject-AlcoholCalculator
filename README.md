@@ -9,6 +9,11 @@
 <br>  
 
 ## 📄프로젝트 소개📄
+- 소개 :
+- 기간 : 2023.10.
+- 개발 목표 :
+- 주요 기능 :
+- 팀 앱 개발 프로젝트를 하기 
 
 <br>  
 
@@ -44,3 +49,12 @@
 <br>
 
 ## 개발 현황
+
+## 디자인 변화
+![image](https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/17a65d3a-7ec3-4b2b-9290-c52d0784aafd)  
+![image](https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/05f49feb-7b20-4dd2-802c-616d7a462113)  
+![image](https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/15f164a8-d454-4909-b8dc-2aaaeab00e62)  
+![image](https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/73bed659-e57a-46aa-bd44-7c66ddbd0e4b)
+
+
+
