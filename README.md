@@ -55,6 +55,9 @@
 <br>
 
 ## 개발 현황
+- v0.0.1 : 도수 계산기 어플 초기버전 개발
+
+<br>
 
 ## 디자인 변화
 <img src="https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/17a65d3a-7ec3-4b2b-9290-c52d0784aafd" width="30%" /> => 
