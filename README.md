@@ -3,6 +3,7 @@
 # 알코올 도수 계산기
 ## 🎬미리보기 (시연)🎬
 <img src="https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/67ee9fc2-763e-4889-8416-3b7395974ada" width="40%"/>  
+
 <img src="https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/0599f082-400a-42a3-995e-f5d14286c53e" width="40%"/>
 
 <br>  
