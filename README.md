@@ -60,25 +60,27 @@
 - 재료 입력 (재료명, 도수, 양)
 - 음수 입력 방지 (도수, 양)
 - 소수점 입력 가능
-<img src="https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/b754cc30-e90d-4dab-bafc-d8f674a37e0b" width="50%"/>
+<img src="https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/74b69a47-b97f-4cbb-a9e7-842989276bad" width="50%"/>
 
 ### 아이템 관리
 - '+' 버튼 입력하여 재료 추가 / 최하단으로 스크롤 이동
 - '-' 버튼 입력하여 재료 제거 / 스크롤 이동 X
 - 재료 아이템을 서브창에 입력받아 사용자가 관리할 수 있도록 함
 - 재료 아이템의 최대 개수는 10개로 제한
-<img src="https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/e8a795ef-74ec-4bca-81e3-8552a5248054" width="50%"/>
+- 도수가 100% 을 넘으면 Toast메세지 출력
+<img src="https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/7c14e684-e7d4-4ba1-98b5-7b2598460bfa" width="50%"/>  
+<img src="https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/a4be82b1-4da8-4965-810d-e15cfe66ecfa" width="50%"/>  
 
 ### 결과 창
 - 키패드 다음 버튼으로 옆의 입력창으로 이동
 - 입력받은 값을 토대로 결과값 출력창으로 이동
 - 빈 칸이 존재하면 해당 칸 값을 0으로 계산
 - 빈 칸을 0 값으로 설정하여 사용자에게 표시
-<img src="https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/c26c3bde-913a-410f-8e42-a0e0550ef669" width="50%"/>
+<img src="https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/9ec4ea09-a026-4516-b070-7010a0a192c8" width="50%"/>
 
 ### 아이템 초기화
 - 초기화 버튼 눌러서 재료 아이템 초기화 및 '팁'창으로 이동
-<img src="https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/b41495a6-e784-4984-8c43-5e9e813150c2" width="50%"/>
+<img src="https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/16c23c72-bf8d-47bf-93d6-f89c89d730fb" width="50%"/>
 
 <br>
 
