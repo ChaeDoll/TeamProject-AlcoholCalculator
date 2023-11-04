@@ -45,7 +45,10 @@
 <br>
 
 ## 프로젝트 설치 및 실행방법
-- APK 다운로드 : [알코올 도수 계산기 APP](https://drive.google.com/file/d/1QZw8nJDJmT22G1pasfwWSQu_lRHaVyzg/view?usp=sharing)
+1. Google Play Store에서 '도수 계산기' 검색 후 앱 다운로드 및 실행 (아직 미출시)
+2. APK 다운로드 [알코올 도수 계산기 APP](https://drive.google.com/file/d/1QZw8nJDJmT22G1pasfwWSQu_lRHaVyzg/view?usp=sharing)
+   - ㅇㅇ
+
 
 <br>
 
