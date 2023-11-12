@@ -22,6 +22,12 @@ class MainActivity : AppCompatActivity() {
     private val mbinding get() = mainBinding!!
 
     //   전역 변수
+    private var toast:Toast ?= null
+    private fun makeToast(message:String){ //토스트메세지의 중복을 제거
+        toast?.cancel()
+        toast = Toast.makeText(applicationContext, message, Toast.LENGTH_SHORT)
+        toast!!.show()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,7 +58,7 @@ class MainActivity : AppCompatActivity() {
         addButton.setOnClickListener {
             // 아이템 추가 개수 제한
             if(calcList.size == 10) {
-                Toast.makeText(this, "재료를 추가할 수 없습니다 (최대 10개)", Toast.LENGTH_SHORT).show()
+                makeToast("재료를 추가할 수 없습니다 (최대 10개)")
                 return@setOnClickListener
             }
             // 키보드 내려가는거
@@ -77,16 +83,14 @@ class MainActivity : AppCompatActivity() {
             // 결과 내용(수정)
             parentLayout.removeAllViews()
             parentLayout.addView(tips)
-            Toast.makeText(this, "초기화 되었습니다.", Toast.LENGTH_SHORT).show()
+            makeToast("초기화 되었습니다.")
         }
         // 결과 버튼
         val resultButton : Button = mbinding.resultButton
         resultButton.setOnClickListener {
             val inputManager : InputMethodManager = this.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             inputManager.hideSoftInputFromWindow(this.currentFocus?.windowToken, InputMethodManager.HIDE_NOT_ALWAYS)
-            //result content 불러오기
-            parentLayout.removeAllViews()
-            parentLayout.addView(results)
+
 
             var sumAmount : Float = 0f // 총 양
             var sumAlcohol  : Float = 0f // 양 * 도수의 총 합
@@ -99,25 +103,31 @@ class MainActivity : AppCompatActivity() {
                 if (amountString == "" && degreeString == "") {
                     calcList[i].amount_ = 0
                     calcList[i].degree_ = 0
-                }else if(amountString == "" && degreeString.toFloat() > 100) {
-                    calcList[i].degree_ = ""
-                    calcList[i].amount_ = 0
-                    Toast.makeText(this, "100 이하의 수로 입력해주세요", Toast.LENGTH_SHORT).show()
+                    calcAdapter.notifyDataSetChanged()
                 }else if (amountString == "" && degreeString != "") {
+                    if (degreeString.toFloat()>100){
+                        calcList[i].degree_ = ""
+                        calcAdapter.notifyDataSetChanged()
+                        makeToast("100 이하의 수로 입력해주세요")
+                        return@setOnClickListener
+                    }
                     calcList[i].amount_ = 0
+                    calcAdapter.notifyDataSetChanged()
                 } else if (amountString != "" && degreeString == "") {
                     calcList[i].degree_ = 0
+                    calcAdapter.notifyDataSetChanged()
                     sumAmount += (amountString.toFloat())
-                } else if (amountString != "" && degreeString.toFloat()>100){
-                    calcList[i].degree_ = ""
-                    Toast.makeText(this,"100 이하의 수로 입력해주세요",Toast.LENGTH_SHORT).show()
-                } else {
+                } else { //amountString과 degreeString이 모두 값이 있지만..
+                    if (degreeString.toFloat()>100){ //그 속의 degree값이 100을 초과할 경우
+                        calcList[i].degree_ = ""
+                        calcAdapter.notifyDataSetChanged()
+                        makeToast("100 이하의 수로 입력해주세요")
+                        return@setOnClickListener
+                    }
                     sumAmount += (amountString.toFloat())
                     sumAlcohol += (amountString.toFloat()) * (degreeString.toFloat())
                 }
             }
-
-            calcAdapter.notifyDataSetChanged()
 
             val degree: Float // 최종 도수 (= 총 양 / 총 알코올 양)
             // sumAmount가 0일 경우 degree를 계산할 때 나누는 값이 0이 되기 때문에 에러 발생 함
@@ -133,6 +143,11 @@ class MainActivity : AppCompatActivity() {
 
             // 결과 내용(수정)
             val tmp: String = "총 양 " + sumAmount.toString() + "도수 " + degreeToFixed
+
+            //result content 불러오기
+            parentLayout.removeAllViews()
+            parentLayout.addView(results)
+
             results.findViewById<TextView>(R.id.resultDegree).text = "$degreeToFixed%"
             results.findViewById<TextView>(R.id.resultAmount).text = "${sumAmount}ml"
         }
