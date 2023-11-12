@@ -72,16 +72,8 @@ class CalcListViewAdapter(private val context:Context, private val calcItems: Ar
         //Degree EditText 변경 이벤트
         viewHolder.listViewDegree.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-//               s.
-                Log.d("before",s.toString())
-
-
-
             }
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                // .을 입력하면 0.으로 변경시켜주기 0.은 자동으로 0.0으로 인식함
-
-
             }
             override fun afterTextChanged(s: Editable?) {
 //                Log.d("after",s.toString())
@@ -92,12 +84,6 @@ class CalcListViewAdapter(private val context:Context, private val calcItems: Ar
                     this@CalcListViewAdapter.notifyDataSetChanged()
                     return
                 }
-                // .문제 해결하기
-                    /*
-*//*                    else if (s.toString().toFloat() > 100) {
-                        calcItems[viewHolder.ref].degree_ = 100
-                        notifyDataSetChanged()
-                        */
                 calcItems[viewHolder.ref].degree_ = viewHolder.listViewDegree.text
             }
         })
