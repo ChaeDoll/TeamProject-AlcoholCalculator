@@ -142,12 +142,12 @@ class MainActivity : AppCompatActivity() {
             }
 
             val degree: Float // 최종 도수 (= 총 양 / 총 알코올 양)
-            // sumAmount가 0일 경우 degree를 계산할 때 나누는 값이 0이 되기 때문에 에러 발생 함
-            // 이를 대비하기 위한 코드
-
+            // sumAmount가 0일 경우 degree를 계산할 때 나누는 값이 0이 되기 때문에 에러 발생 함 이를 대비하기 위한 코드
             if (sumAmount == 0f) {
                 // sumAmount가 0일 때 degree값이 nan는 에러 해결 코드
-                degree = 0f
+                // 총 양이 0일 때 return 금지?
+                makeToast("총 량은 0보다 커야 합니다.")
+                return@setOnClickListener
             } else {
                 degree = (sumAlcohol / sumAmount)
             }
