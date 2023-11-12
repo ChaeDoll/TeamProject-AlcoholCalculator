@@ -15,11 +15,15 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.*
 import androidx.core.widget.doAfterTextChanged
 import com.example.alcoholcalculator.databinding.ActivityMainBinding
+import com.example.alcoholcalculator.databinding.CalcListItemBinding
 
 class MainActivity : AppCompatActivity() {
     //    binding
     private var mainBinding: ActivityMainBinding?= null
     private val mbinding get() = mainBinding!!
+
+    private var listBinding: CalcListItemBinding?= null
+    private val lbinding get() = listBinding!!
 
     //   전역 변수
     private var toast:Toast ?= null
@@ -101,8 +105,11 @@ class MainActivity : AppCompatActivity() {
                 val degreeString = calcList[i].degree_.toString()
 
                 if (amountString == "" && degreeString == "") {
-                    calcList[i].amount_ = 0
-                    calcList[i].degree_ = 0
+                    // 여기 수정
+//                    calcList[i].amount_ = 0
+//                    calcList[i].degree_ = 0
+                    calcList[i].amount_ = ""
+                    calcList[i].degree_ = ""
                     calcAdapter.notifyDataSetChanged()
                 }else if (amountString == "" && degreeString != "") {
                     if (degreeString.toFloat()>100){
@@ -111,14 +118,20 @@ class MainActivity : AppCompatActivity() {
                         makeToast("100 이하의 수로 입력해주세요")
                         return@setOnClickListener
                     }
-                    calcList[i].amount_ = 0
+//                    calcList[i].amount_ = 0
+                    calcList[i].amount_ = ""
                     calcAdapter.notifyDataSetChanged()
                 } else if (amountString != "" && degreeString == "") {
-                    calcList[i].degree_ = 0
+//                    calcList[i].degree_ = 0
+                    calcList[i].degree_ = ""
                     calcAdapter.notifyDataSetChanged()
                     sumAmount += (amountString.toFloat())
                 } else { //amountString과 degreeString이 모두 값이 있지만..
-                    if (degreeString.toFloat()>100){ //그 속의 degree값이 100을 초과할 경우
+                    if (degreeString.toFloat() > 100) { //그 속의 degree값이 100을 초과할 경우
+//                        lbinding.listViewDegree.requestFocus()
+//                        lbinding.listViewDegree.hint = "0"
+//                        makeToast("100 이하의 수로 입력해주세요")
+
                         calcList[i].degree_ = ""
                         calcAdapter.notifyDataSetChanged()
                         makeToast("100 이하의 수로 입력해주세요")

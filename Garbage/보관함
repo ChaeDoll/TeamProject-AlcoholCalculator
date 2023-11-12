@@ -1,1 +1,10 @@
-ㅎㅎ
+// 빈 칸으로 계산 결과를 눌렀을 때 모든 칸을 0으로 채울 때 0을 다시 선택하면 0이 사라지고 값을 입력할 수 있도록 하려 했을 때 사용한 식
+//                if( s.toString().length>=2){
+//                    if(s.toString()[0].toString().equals("0")){
+//                        Log.d("값",s.toString()[0].toString())
+//                        calcItems[0].degree_ = ""
+//                        calcItems[viewHolder.ref].degree_ = viewHolder.listViewDegree.text
+//                        return notifyDataSetChanged()
+//                    }
+//
+//                }
