@@ -100,13 +100,15 @@ class MainActivity : AppCompatActivity() {
                     calcList[i].amount_ = 0
                     calcList[i].degree_ = 0
                 }else if(amountString == "" && degreeString.toFloat() > 100) {
-                    Toast.makeText(this,"100 이하의 수로 입력해주세요",Toast.LENGTH_SHORT).show()
+                    calcList[i].degree_ = ""
+                    Toast.makeText(this, "100 이하의 수로 입력해주세요", Toast.LENGTH_SHORT).show()
                 }else if (amountString == "" && degreeString != "") {
                     calcList[i].amount_ = 0
                 } else if (amountString != "" && degreeString == "") {
                     calcList[i].degree_ = 0
                     sumAmount += (amountString.toFloat())
                 } else if (amountString != "" && degreeString.toFloat()>100){
+                    calcList[i].degree_ = ""
                     Toast.makeText(this,"100 이하의 수로 입력해주세요",Toast.LENGTH_SHORT).show()
                 } else {
                     sumAmount += (amountString.toFloat())
