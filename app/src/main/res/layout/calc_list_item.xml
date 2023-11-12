@@ -69,7 +69,6 @@
             android:minWidth="48dp"
             android:minHeight="48dp"
             android:textAlignment="center"
-            android:nextFocusDown="@id/listViewMaterial"
             android:imeOptions="actionDone" />
 
 

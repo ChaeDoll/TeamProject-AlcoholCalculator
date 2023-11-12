@@ -2,6 +2,7 @@ package com.example.alcoholcalculator
 
 import android.content.Context
 import android.text.Editable
+import android.text.Selection
 import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
@@ -10,7 +11,6 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.core.text.set
 import androidx.core.widget.addTextChangedListener
-import com.example.alcoholcalculator.databinding.ActivityMainBinding
 
 class CalcListViewAdapter(private val context:Context, private val calcItems: ArrayList<CalcItem>):BaseAdapter() {
 //    private var listBinding: ListItemBinding?= null
@@ -73,44 +73,35 @@ class CalcListViewAdapter(private val context:Context, private val calcItems: Ar
         //Degree EditText 변경 이벤트
         viewHolder.listViewDegree.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-
             }
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-
             }
             override fun afterTextChanged(s: Editable?) {
-//                Log.d("after",s.toString())
+                Selection.setSelection(s, s!!.length)
                 if(s.contentEquals(".")){
+                    Log.d("잡앗따.","점")
                     calcItems[viewHolder.ref].degree_ = "0."
                     return notifyDataSetChanged()
                 }
-
-
-
                 calcItems[viewHolder.ref].degree_ = viewHolder.listViewDegree.text
             }
         })
         //Amount EditText 변경 이벤트
         viewHolder.listViewAmount.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-
             }
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-
-            }
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
             override fun afterTextChanged(s: Editable?) {
-
-
+                Selection.setSelection(s, s!!.length)
                 if(s.contentEquals(".")){
+                    Log.d("잡앗따.","점")
                     calcItems[viewHolder.ref].amount_ = "0."
                     return notifyDataSetChanged()
                 }
-                // 숫자가 0이면 원래는 뒤에 쓰여 지는데 그거 지우고 그니까 덮어씀
-
                 calcItems[viewHolder.ref].amount_ = viewHolder.listViewAmount.text
-
             }
         })
         return convertView
     }
 }
+// 총 양이 .0이면 Int처럼 소수점이면 소수점으로. -> 채윤이가 해결할 것

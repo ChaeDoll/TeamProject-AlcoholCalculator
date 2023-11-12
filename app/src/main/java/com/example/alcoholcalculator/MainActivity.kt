@@ -72,7 +72,6 @@ class MainActivity : AppCompatActivity() {
             // 아이템 추가 및 새로고침
             calcList.add(CalcItem("", "", ""))
             calcAdapter.notifyDataSetChanged()
-//            calcListView.transcriptMode = ListView.TRANSCRIPT_MODE_NORMAL
             calcListView.transcriptMode = ListView.TRANSCRIPT_MODE_ALWAYS_SCROLL
         }
 
