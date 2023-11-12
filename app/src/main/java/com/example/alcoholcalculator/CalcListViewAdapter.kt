@@ -13,8 +13,6 @@ import androidx.core.text.set
 import androidx.core.widget.addTextChangedListener
 
 class CalcListViewAdapter(private val context:Context, private val calcItems: ArrayList<CalcItem>):BaseAdapter() {
-//    private var listBinding: ListItemBinding?= null
-//    private val lbinding get() = listBinding!!
 
     override fun getCount(): Int = calcItems.size //list 전체 크기를 반환
 
