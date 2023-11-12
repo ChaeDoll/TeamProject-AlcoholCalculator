@@ -47,7 +47,7 @@ class CalcListViewAdapter(private val context:Context, private val calcItems: Ar
 
         //삭제 함수
         viewHolder.listViewButton.setOnClickListener {
-            Log.d("viewManager", viewHolder.ref.toString() + "번 Item을 삭제합니다")
+//            Log.d("viewManager", viewHolder.ref.toString() + "번 Item을 삭제합니다")
             if(calcItems.size>2) {
                 calcItems.removeAt(viewHolder.ref)
                 this.notifyDataSetChanged()
@@ -71,9 +71,27 @@ class CalcListViewAdapter(private val context:Context, private val calcItems: Ar
         })
         //Degree EditText 변경 이벤트
         viewHolder.listViewDegree.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+//               s.
+                Log.d("before",s.toString())
+
+
+
+            }
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                // .을 입력하면 0.으로 변경시켜주기 0.은 자동으로 0.0으로 인식함
+
+
+            }
             override fun afterTextChanged(s: Editable?) {
+//                Log.d("after",s.toString())
+                Log.d("on",s.toString())
+                if(s.contentEquals(".")){
+                    Log.d("잡앗따.","점")
+                    calcItems[viewHolder.ref].degree_ = "0."
+                    this@CalcListViewAdapter.notifyDataSetChanged()
+                    return
+                }
                 // .문제 해결하기
                     /*
 *//*                    else if (s.toString().toFloat() > 100) {
@@ -88,6 +106,12 @@ class CalcListViewAdapter(private val context:Context, private val calcItems: Ar
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
             override fun afterTextChanged(s: Editable?) {
+                if(s.contentEquals(".")){
+                    Log.d("잡앗따.","점")
+                    calcItems[viewHolder.ref].amount_ = "0."
+                    this@CalcListViewAdapter.notifyDataSetChanged()
+                    return
+                }
                 calcItems[viewHolder.ref].amount_ = viewHolder.listViewAmount.text
             }
         })

@@ -101,6 +101,7 @@ class MainActivity : AppCompatActivity() {
                     calcList[i].degree_ = 0
                 }else if(amountString == "" && degreeString.toFloat() > 100) {
                     calcList[i].degree_ = ""
+                    calcList[i].amount_ = 0
                     Toast.makeText(this, "100 이하의 수로 입력해주세요", Toast.LENGTH_SHORT).show()
                 }else if (amountString == "" && degreeString != "") {
                     calcList[i].amount_ = 0
@@ -132,7 +133,6 @@ class MainActivity : AppCompatActivity() {
 
             // 결과 내용(수정)
             val tmp: String = "총 양 " + sumAmount.toString() + "도수 " + degreeToFixed
-
             results.findViewById<TextView>(R.id.resultDegree).text = "$degreeToFixed%"
             results.findViewById<TextView>(R.id.resultAmount).text = "${sumAmount}ml"
         }
