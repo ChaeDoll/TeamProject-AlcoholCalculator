@@ -74,10 +74,4 @@
             android:textSize="17sp"
             />
     </LinearLayout>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="빈 칸은 0으로 계산됩니다."
-        android:textSize="11sp"
-        android:layout_marginTop="10dp"/>
 </LinearLayout>
