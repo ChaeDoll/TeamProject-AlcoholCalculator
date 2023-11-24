@@ -171,4 +171,8 @@ class MainActivity : AppCompatActivity() {
         Log.d("Help", "App is Down")
         finish()
     }
+
+    // 슬라이드 했을 때 확장된 결과 표출
+
+
 }
