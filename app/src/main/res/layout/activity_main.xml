@@ -270,6 +270,103 @@
                         android:textStyle="bold" />
                 </LinearLayout>
             </LinearLayout>
+
+            <!--    연습-->
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:weightSum="2"
+
+                >
+
+                <!--위-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:weightSum="5"
+                    >
+
+
+                    <TextView
+                        android:id="@+id/text"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:text="소주 (16.5도, 360ml 기준)"
+                        android:textSize="17dp"
+                        android:gravity="center"
+                        />
+                    <TextView
+                        android:id="@+id/textSoju"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="right|center"
+                        android:textSize="17dp"
+                        android:text="0.00" />
+
+                    <TextView
+                        android:id="@+id/textCan"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="left|center"
+                        android:textSize="17dp"
+                        android:text=" 병" />
+
+
+                </LinearLayout>
+
+
+
+                <!--아래-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:weightSum="5"
+                    >
+
+
+                    <TextView
+                        android:id="@+id/textDown"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:text="맥주 (4.5도, 355ml 기준)"
+                        android:textSize="17dp"
+                        android:gravity="center"
+                        />
+                    <TextView
+                        android:id="@+id/textBeer"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="right|center"
+                        android:textSize="17dp"
+                        android:text="0.00" />
+
+                    <TextView
+                        android:id="@+id/textB"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="left|center"
+                        android:textSize="17dp"
+                        android:text=" 캔" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
         </LinearLayout>
     </LinearLayout>
 </com.sothree.slidinguppanel.SlidingUpPanelLayout>
