@@ -13,6 +13,7 @@ import android.view.animation.AnimationSet
 import android.view.inputmethod.InputMethod
 import android.view.inputmethod.InputMethodManager
 import android.widget.*
+import androidx.core.view.isVisible
 import androidx.core.widget.doAfterTextChanged
 import com.example.alcoholcalculator.databinding.ActivityMainBinding
 import com.example.alcoholcalculator.databinding.CalcListItemBinding
@@ -44,10 +45,11 @@ class MainActivity : AppCompatActivity() {
         val calcList = arrayListOf<CalcItem>()
         val calcAdapter = CalcListViewAdapter(this, calcList) //calcListViewAdapter.kt 연결
         val calcListView : ListView = mbinding.listview
-        val parentLayout = findViewById<LinearLayout>(R.id.content_item)
+/*        val parentLayout = findViewById<LinearLayout>(R.id.content_item)
         val tips = LayoutInflater.from(this).inflate(R.layout.content_tips, null) as LinearLayout
         val results = LayoutInflater.from(this).inflate(R.layout.content_results, null) as LinearLayout
-        parentLayout.addView(tips)
+        parentLayout.addView(tips)*/
+        //기본으로 resultContent는 안나옴
 
         calcListView.adapter = calcAdapter
 
@@ -84,8 +86,8 @@ class MainActivity : AppCompatActivity() {
             calcAdapter.notifyDataSetChanged()
 
             // 결과 내용(수정)
-            parentLayout.removeAllViews()
-            parentLayout.addView(tips)
+/*            parentLayout.removeAllViews()
+            parentLayout.addView(tips)*/
             makeToast("초기화 되었습니다.")
         }
         // 결과 버튼
@@ -157,11 +159,11 @@ class MainActivity : AppCompatActivity() {
             val tmp: String = "총 양 " + sumAmount.toString() + "도수 " + degreeToFixed
 
             //result content 불러오기
-            parentLayout.removeAllViews()
+/*            parentLayout.removeAllViews()
             parentLayout.addView(results)
 
             results.findViewById<TextView>(R.id.resultDegree).text = "$degreeToFixed%"
-            results.findViewById<TextView>(R.id.resultAmount).text = "${sumAmount}ml"
+            results.findViewById<TextView>(R.id.resultAmount).text = "${sumAmount}ml"*/
         }
     } //fun onCreate 끝
 
