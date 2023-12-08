@@ -175,14 +175,10 @@
                     />
             </LinearLayout>
         </LinearLayout>
-
-
-        <TextView
+        <View
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.5"
-            android:gravity="center"
-            android:text="지나친 음주는 건강에 해롭습니다"/>
+            android:layout_weight="0.5"/>
     </LinearLayout>
     <LinearLayout
         android:id="@+id/slide_layout"
