@@ -50,16 +50,18 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
+            android:layout_marginHorizontal="30dp"
             android:orientation="horizontal"
             android:gravity="center"
-            android:weightSum="3">
+            android:weightSum="5">
 
             <!--수정-->
             <ImageButton
+                android:contentDescription="clear_button"
                 android:id="@+id/clearButton"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.5"
+                android:layout_weight="1"
                 android:background="@drawable/main_plus_button"
                 android:src="@drawable/clear_icon"
                 />
@@ -68,20 +70,20 @@
                 android:id="@+id/resultButton"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1.5"
+                android:layout_weight="3"
                 android:layout_marginHorizontal="12dp"
-                android:background="@drawable/main_result_button"
-                android:textColor="@color/white"
                 android:textSize="24sp"
                 android:text="계산 결과"
                 android:paddingBottom="3dp"
+                android:background="@drawable/main_result_button"
+                android:textColor="@color/white"
                 />
             <!--수정-->
             <Button
                 android:id="@+id/addButton"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.5"
+                android:layout_weight="1"
                 android:background="@drawable/main_plus_button"
                 android:textColor="@color/white"
                 android:textSize="40sp"
@@ -115,10 +117,11 @@
                 android:orientation="horizontal">
 
                 <ImageView
+                    android:contentDescription="beer_icon"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/beer_icon"
-                    android:layout_marginRight="25dp"
+                    android:layout_marginEnd="25dp"
                     />
                 <TextView
                     android:layout_width="wrap_content"
@@ -139,7 +142,7 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/soju_icon"
-                    android:layout_marginRight="25dp"
+                    android:layout_marginEnd="25dp"
                     />
 
                 <TextView
@@ -157,6 +160,7 @@
                 >
 
                 <ImageView
+                    android:contentDescription="water_icon"
                     android:id="@+id/imageView3"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
@@ -171,14 +175,10 @@
                     />
             </LinearLayout>
         </LinearLayout>
-
-
-        <TextView
+        <View
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.5"
-            android:gravity="center"
-            android:text="지나친 음주는 건강에 해롭습니다"/>
+            android:layout_weight="0.5"/>
     </LinearLayout>
     <LinearLayout
         android:id="@+id/slide_layout"
@@ -198,8 +198,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/botton_sheet_holderbar"
-                />
+                android:src="@drawable/botton_sheet_holderbar"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
