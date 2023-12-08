@@ -12,4 +12,7 @@
     <string name="soju_text">소주잔은 한 잔에 <b>70ml</b>입니다.</string>
     <string name="beer_text">맥주잔은 한 잔에 <b>200ml</b>입니다.</string>
     <string name="paper_text">종이컵은 한 잔에 <b>180ml</b>입니다.</string>
+
+    <string name="soju_desc">소주 <font size='13'>(16.5도, 360ml 기준)</font></string>
+    <string name="beer_desc">맥주 <font size='13'>(4.5도, 355ml 기준)</font></string>
 </resources>

@@ -13,10 +13,12 @@ import android.view.animation.AnimationSet
 import android.view.inputmethod.InputMethod
 import android.view.inputmethod.InputMethodManager
 import android.widget.*
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.isVisible
 import androidx.core.widget.doAfterTextChanged
 import com.example.alcoholcalculator.databinding.ActivityMainBinding
 import com.example.alcoholcalculator.databinding.CalcListItemBinding
+import com.sothree.slidinguppanel.SlidingUpPanelLayout
 
 class MainActivity : AppCompatActivity() {
     //    binding
@@ -36,11 +38,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // activity_main.xml 연결
+//        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+//        activity_main.xml 연결
         mainBinding = ActivityMainBinding.inflate(layoutInflater)
         // activity_main.xml 기본 view로 설정
         setContentView(mbinding.root)
-
         // 지역변수
         val calcList = arrayListOf<CalcItem>()
         val calcAdapter = CalcListViewAdapter(this, calcList) //calcListViewAdapter.kt 연결
@@ -84,7 +86,9 @@ class MainActivity : AppCompatActivity() {
             calcList.add(CalcItem("", "", ""))
             calcList.add(CalcItem("", "", ""))
             calcAdapter.notifyDataSetChanged()
-
+            // 초기화 버튼을 누르면 Sliding Panel이 HIDDEN 상태가 됨.
+            mbinding.resultContent.panelState = SlidingUpPanelLayout.PanelState.HIDDEN
+            mbinding.tipContent.visibility = View.VISIBLE
             // 결과 내용(수정)
 /*            parentLayout.removeAllViews()
             parentLayout.addView(tips)*/
@@ -158,6 +162,16 @@ class MainActivity : AppCompatActivity() {
             // 결과 내용(수정)
             val tmp: String = "총 양 " + sumAmount.toString() + "도수 " + degreeToFixed
 
+            mbinding.resultContent.panelState = SlidingUpPanelLayout.PanelState.COLLAPSED
+            mbinding.resultDegree.text = "${degreeToFixed}%"
+            mbinding.resultAmount.text = "${sumAmount}ml"
+
+            val sojuToFixed : Double = sumAlcohol/16.5/360
+            val beerToFixed : Double = sumAlcohol/4.5/355
+            mbinding.textSoju.text = String.format("%.2f", sojuToFixed)
+            mbinding.textBeer.text = String.format("%.2f", beerToFixed)
+
+            mbinding.tipContent.visibility = View.INVISIBLE
             //result content 불러오기
 /*            parentLayout.removeAllViews()
             parentLayout.addView(results)
