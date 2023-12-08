@@ -4,4 +4,5 @@
     <corners android:radius="10dp"/>
     <solid android:color="@color/material_minus_button_green"/>
     <stroke android:color="@color/material_minus_button_green"/>
+
 </shape>

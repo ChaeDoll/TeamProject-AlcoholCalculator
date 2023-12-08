@@ -83,6 +83,7 @@
 
 
     </LinearLayout>
+<!--    android:background="@drawable/listview_delete_button"-->
 
     <Button
         android:id="@+id/listViewButton"
