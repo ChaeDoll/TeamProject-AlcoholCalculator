@@ -1,6 +1,6 @@
 ![header](https://capsule-render.vercel.app/api?type=transparent&height=300&section=header&text=Alcohol%20Calculator&fontSize=90&fontColor=00994B)  
 
-# 알코올 도수 계산기🍺 [(PlayStore LINK)](https://play.google.com/store/apps/details?id=com.chaesogong.alcoholcalculator&pcampaignid=web_share)
+# 알코올 도수 계산기🍺 [(Google Play LINK)](https://play.google.com/store/apps/details?id=com.chaesogong.alcoholcalculator&pcampaignid=web_share)
 ## 🎬미리보기 (시연)🎬
 <img src="https://github.com/ChaeSoGong/TeamProject-AlcoholCalculator/assets/108540812/70403548-f984-489e-acec-ca22eb597b57" width="30%"/>  
 
