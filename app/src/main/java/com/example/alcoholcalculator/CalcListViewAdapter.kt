@@ -28,7 +28,7 @@ class CalcListViewAdapter(private val context:Context, private val calcItems: Ar
         var convertView = view
         val viewHolder: CalcViewHolder
         if (convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.calc_list_item, parent, false)
+            convertView = LayoutInflater.from(context).inflate(R.layout.test_calc_list_item, parent, false) //test용도
             viewHolder = CalcViewHolder()
             viewHolder.ref = position
             viewHolder.listViewMaterial = convertView.findViewById<EditText>(R.id.listViewMaterial)

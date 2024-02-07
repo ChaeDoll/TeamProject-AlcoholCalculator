@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="material_array">
+        <item>소주</item>
+        <item>맥주</item>
+        <item>막걸리</item>
+        <item>양주</item>
+        <item>기타</item>
+    </string-array>
+
+    <string-array name="soju_array">
+        <item>소주</item>
+        <item>참이슬</item>
+        <item>처음처럼</item>
+        <item>진로</item>
+    </string-array>
+    <string-array name="beer_array">
+        <item>맥주</item>
+        <item>카스</item>
+        <item>테라</item>
+    </string-array>
+</resources>

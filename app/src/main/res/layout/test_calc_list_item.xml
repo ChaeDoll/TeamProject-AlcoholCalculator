@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--아이템 한 개(이름 / 도수 / 양 / -버튼)-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="53dp">
+
+    <!--이름 / 도수 /양-->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="5"
+        android:background="@drawable/listview_item_background"
+        android:orientation="horizontal"
+        android:paddingTop="3dp"
+        android:paddingRight="10dp"
+        android:gravity="center_vertical"
+        android:weightSum="10">
+
+        <EditText
+            android:id="@+id/listViewMaterial"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="4"
+            android:hint="재료"
+            android:textColorHint="#C0C0C0"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:nextFocusDown="@id/listViewDegree"
+            android:textAlignment="center"
+            />
+<!--        <Spinner
+            android:id="@+id/listViewMaterialSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />-->
+        <EditText
+            android:id="@+id/listViewDegree"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:hint="도수"
+            android:textColorHint="#C0C0C0"
+            android:inputType="numberDecimal"
+            android:maxLength="5"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            android:nextFocusDown="@id/listViewAmount"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/listViewText1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="%"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+        <EditText
+            android:id="@+id/listViewAmount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:hint="양"
+            android:textColorHint="#C0C0C0"
+            android:inputType="numberDecimal"
+            android:maxLength="5"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            android:textAlignment="center"
+            android:imeOptions="actionDone" />
+
+
+        <TextView
+            android:id="@+id/listViewText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="ml"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+<!--    android:background="@drawable/listview_delete_button"-->
+
+    <Button
+        android:id="@+id/listViewButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginHorizontal="12dp"
+        android:background="@drawable/listview_delete_button"
+        android:text="-"
+        android:textColor="@color/white"
+        android:textSize="35sp" />
+</LinearLayout>
